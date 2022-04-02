@@ -26,7 +26,6 @@ _Response:_
 ```js
 [
   {
-    id: number;
     guid: string;
     name: string;
     purpose: string;
@@ -46,7 +45,6 @@ _Response:_
 
 ```js
 {
-  id: number;
   guid: string;
   name: string;
   purpose: string;
@@ -74,7 +72,6 @@ _Response:_
 
 ```js
 {
-  id: number;
   guid: string;
   name: string;
   purpose: string;
@@ -103,7 +100,6 @@ _Response:_
 
 ```js
 {
-  id: number;
   guid: string;
   name: string;
   purpose: string;

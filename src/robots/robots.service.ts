@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateRobotDto } from './dto/create-robot.dto';
+import { RobotDto } from './dto/robot.dto';
 import { UpdateRobotDto } from './dto/update-robot.dto';
 import { Robot } from './entities/robot.entity';
 
@@ -27,7 +28,7 @@ export class RobotsService {
     return this.robotsRepo.find();
   }
 
-  findOne(guid: string): Promise<Robot | null> {
+  findOne(guid: string): Promise<Robot | undefined> {
     return this.robotsRepo.findOne({
       where: [{ guid }],
     });
@@ -47,5 +48,14 @@ export class RobotsService {
     const robot = await this.findOne(guid);
 
     this.robotsRepo.remove(robot);
+  }
+
+  toDto(robot?: Robot): RobotDto {
+    delete robot.id;
+    return robot;
+  }
+
+  toDtos(list: Robot[] = []): RobotDto[] {
+    return list.map((robot) => this.toDto(robot));
   }
 }

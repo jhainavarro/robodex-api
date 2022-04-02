@@ -5,6 +5,8 @@ import { CreateRobotDto } from './dto/create-robot.dto';
 import { UpdateRobotDto } from './dto/update-robot.dto';
 import { Robot } from './entities/robot.entity';
 
+// TODO: Error handling + proper error codes
+
 @Injectable()
 export class RobotsService {
   constructor(

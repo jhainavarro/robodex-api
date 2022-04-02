@@ -13,4 +13,7 @@ export class Robot {
 
   @Column()
   purpose: string;
+
+  @Column()
+  avatarUrl: string;
 }
